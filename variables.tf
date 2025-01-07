@@ -2,12 +2,6 @@
 # GlitchTip variables
 #
 
-variable "helm_release_name" {
-  description = "The name of the Helm release."
-  type        = string
-  default     = "glitchtip"
-}
-
 variable "namespace_name" {
   description = "The namespace where the Helm release will be installed."
   type        = string
