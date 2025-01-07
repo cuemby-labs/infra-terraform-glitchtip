@@ -2,17 +2,17 @@
 # GlitchTip Resources
 #
 
-data "kubernetes_namespace" "sentry-system" {
+data "kubernetes_namespace" "sentry_system" {
   metadata {
     name = var.namespace_name
   }
 }
 
-resource "kubernetes_namespace" "sentry-system" {
+resource "kubernetes_namespace" "sentry_system" {
   metadata {
     name = var.namespace_name
   }
-  count = length(data.kubernetes_namespace.sentry-system.id) == 0 ? 1 : 0
+  count = length(data.kubernetes_namespace.sentry_system.id) == 0 ? 1 : 0
 }
 
 resource "helm_release" "glitchtip" {
@@ -42,6 +42,8 @@ resource "helm_release" "glitchtip" {
       beat_limits_memory        = var.resources["beat"]["limits"]["memory"],
       beat_request_cpu          = var.resources["beat"]["requests"]["cpu"],
       beat_limits_cpu           = var.resources["beat"]["limits"]["cpu"]
+      issuer_name               = var.issuer_name,
+      issuer_kind               = var.issuer_kind,
     })
   ]
 }
