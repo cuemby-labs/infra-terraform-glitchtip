@@ -47,3 +47,10 @@ beat:
     requests:
       cpu: ${beat_request_cpu}
       memory: ${beat_request_memory}
+env:
+  normal:
+    GLITCHTIP_DOMAIN: ${GLITCHTIP_DOMAIN}
+  secret:
+    SECRET_KEY: ${SECRET_KEY}
+    DATABASE_URL: ${DATABASE_URL}
+    REDIS_URL: ${REDIS_URL}

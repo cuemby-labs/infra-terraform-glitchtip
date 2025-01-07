@@ -25,10 +25,10 @@ resource "helm_release" "glitchtip" {
   values = [
     templatefile("${path.module}/values.yaml.tpl", {
 
-      glitchtip_domain          = var.env.normal.GLITCHTIP_DOMAIN,
-      secret_key                = var.env.secret.SECRET_KEY,
-      database_url              = var.env.secret.DATABASE_URL,
-      redis_url                 = var.env.secret.REDIS_URL,
+      glitchtip_domain          = var.domain_name,
+      SECRET_KEY                = var.secret_key,
+      database_url              = var.database_url,
+      redis_url                 = var.redis_url,
       web_request_memory        = var.resources["web"]["requests"]["memory"],
       web_limits_memory         = var.resources["web"]["limits"]["memory"],
       web_request_cpu           = var.resources["web"]["requests"]["cpu"],
