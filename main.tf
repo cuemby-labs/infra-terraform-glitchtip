@@ -2,7 +2,7 @@
 # GlitchTip Resources
 #
 
-data "kubernetes_namespace" "sentry_system" {
+data "kubernetes_namespace" "data_sentry_system" {
   metadata {
     name = var.namespace_name
   }
@@ -12,7 +12,7 @@ resource "kubernetes_namespace" "sentry_system" {
   metadata {
     name = var.namespace_name
   }
-  count = length(data.kubernetes_namespace.sentry_system.id) == 0 ? 1 : 0
+  count = length(data.kubernetes_namespace.data_sentry_system.id) == 0 ? 1 : 0
 }
 
 resource "helm_release" "glitchtip" {
