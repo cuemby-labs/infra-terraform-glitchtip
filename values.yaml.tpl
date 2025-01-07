@@ -49,7 +49,7 @@ beat:
       memory: ${beat_request_memory}
 env:
   normal:
-    GLITCHTIP_DOMAIN: ${GLITCHTIP_DOMAIN}
+    GLITCHTIP_DOMAIN: https://glitchtip.${domain_name}
   secret:
     SECRET_KEY: ${SECRET_KEY}
     DATABASE_URL: ${DATABASE_URL}
