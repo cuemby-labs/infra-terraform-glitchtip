@@ -25,7 +25,8 @@ resource "helm_release" "glitchtip" {
   values = [
     templatefile("${path.module}/values.yaml.tpl", {
 
-      glitchtip_domain          = var.domain_name,
+      domain_name               = var.domain_name,
+      dash_domain_name          = local.dash_domain_name,
       SECRET_KEY                = var.secret_key,
       database_url              = var.database_url,
       redis_url                 = var.redis_url,
@@ -50,7 +51,8 @@ resource "helm_release" "glitchtip" {
 #
 
 locals {
-  context = var.context
+  context          = var.context
+  dash_domain_name = replace(var.domain_name, ".", "-")
 }
 
 module "submodule" {

@@ -21,7 +21,7 @@ variable "chart_version" {
 }
 
 variable "resources" {
-  description = "Resource limits and requests for Harbor Helm release."
+  description = "Resource limits and requests for GlitchTip Helm release."
   type        = map(object({
     limits = object({
       cpu    = string
