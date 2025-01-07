@@ -68,18 +68,21 @@ variable "resources" {
 variable "secret_key" {
   description = "The secret key for GlitchTip."
   type        = string
+  default     = "default-secret-key"
   sensitive   = true
 }
 
 variable "database_url" {
   description = "Database connection string for GlitchTip."
   type        = string
+  default     = "postgres://default-user:default-pass@localhost:5432/default-db"
   sensitive   = true
 }
 
 variable "redis_url" {
   description = "Redis connection string for GlitchTip."
   type        = string
+  default     = "redis://localhost:6379"
   sensitive   = true
 }
 
