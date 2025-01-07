@@ -14,7 +14,7 @@ variable "namespace_name" {
   default     = "sentry-system"
 }
 
-variable "helm_chart_version" {
+variable "chart_version" {
   description = "The version of the Helm chart."
   type        = string
   default     = "5.0.4"
