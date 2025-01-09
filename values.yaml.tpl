@@ -57,5 +57,5 @@ env:
 
 postgresql:
   enabled: ${postgresql}
-    auth:
-      postgresPassword: ${postgres_pass}
+  auth:
+    postgresPassword: ${postgres_pass}
