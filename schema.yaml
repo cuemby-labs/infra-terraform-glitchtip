@@ -120,6 +120,24 @@ components:
           x-walrus-ui:
             group: Basic
             order: 5
+        enable_postgres:
+          title: Enable Postgres
+          type: boolean
+          description: Enable postgresql
+          default: "false"
+          x-walrus-ui:
+            group: Basic
+            order: 6
+        postgres_pass:
+          title: Postgres Pass
+          type: string
+          description: Password for postgres
+          default: default-password
+          format: password
+          writeOnly: true
+          x-walrus-ui:
+            group: Basic
+            order: 7
         redis_url:
           title: Redis Url
           type: string
