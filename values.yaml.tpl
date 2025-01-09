@@ -1,7 +1,8 @@
 hostname: glitchtip.${domain_name}
-expose:
-  type: ingress
+web:
   ingress:
+    enabled: true
+    className: nginx
     annotations:
       ingress.kubernetes.io/proxy-body-size: "0"
       ingress.kubernetes.io/ssl-redirect: "true"
@@ -11,19 +12,12 @@ expose:
       cert-manager.io/issuer-kind: ${issuer_kind}
       cert-manager.io/issuer-group: cert-manager.k8s.cloudflare.com
       external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
-    glitchtip:
-      annotations:
-        external-dns.alpha.kubernetes.io/hostname: glitchtip.${domain_name}
     hosts:
-      web: glitchtip.${domain_name}
-    className: nginx
-  tls:
-    enabled: true
-    certSource: secret
-    secret:
-      secretName: "glitchtip-${dash_domain_name}"
-externalURL: https://glitchtip.${domain_name}
-web:
+      - host: glitchtip.${domain_name}
+    tls:
+      - secretName: glitchtip-${dash_domain_name}
+        hosts:
+          - glitchtip.${domain_name}
   resources:
     limits:
       cpu: ${web_limits_cpu}
