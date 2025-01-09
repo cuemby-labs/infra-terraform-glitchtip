@@ -18,6 +18,9 @@ web:
       - secretName: glitchtip-${dash_domain_name}
         hosts:
           - glitchtip.${domain_name}
+        paths:
+        - path: /
+          pathType: Prefix
   resources:
     limits:
       cpu: ${web_limits_cpu}
