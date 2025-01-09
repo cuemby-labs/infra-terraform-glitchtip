@@ -56,6 +56,6 @@ env:
     REDIS_URL: ${REDIS_URL}
 
 postgresql:
-  enabled: ${enable_postgres}
+  enabled: ${postgresql}
     auth:
       postgresPassword: ${password}
