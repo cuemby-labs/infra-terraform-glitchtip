@@ -83,7 +83,6 @@ variable "enable_postgres" {
   description = "Enable postgresql"
   type        = bool
   default     = "false"
-  sensitive   = true
 }
 
 variable "postgres_pass" {
