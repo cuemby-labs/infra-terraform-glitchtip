@@ -35,6 +35,8 @@ resource "helm_release" "glitchtip" {
       beat_limits_memory        = var.resources["beat"]["limits"]["memory"],
       beat_request_cpu          = var.resources["beat"]["requests"]["cpu"],
       beat_limits_cpu           = var.resources["beat"]["limits"]["cpu"]
+      postgresql                = var.enable_postgres,
+      postgres_pass             = var.postgres_pass,
       issuer_name               = var.issuer_name,
       issuer_kind               = var.issuer_kind,
     })

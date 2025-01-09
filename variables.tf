@@ -79,6 +79,19 @@ variable "database_url" {
   sensitive   = true
 }
 
+variable "enable_postgres" {
+  description = "Enable postgresql"
+  type        = boolean
+  default     = "false"
+  sensitive   = true
+}
+
+variable "postgres_pass" {
+  description = "Password for postgres"
+  type        = string
+  sensitive   = true
+}
+
 variable "redis_url" {
   description = "Redis connection string for GlitchTip."
   type        = string

@@ -54,3 +54,8 @@ env:
     SECRET_KEY: ${SECRET_KEY}
     DATABASE_URL: ${DATABASE_URL}
     REDIS_URL: ${REDIS_URL}
+
+postgresql:
+  enabled: ${enable_postgres}
+    auth:
+      postgresPassword: ${password}
