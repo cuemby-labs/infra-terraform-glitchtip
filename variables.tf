@@ -89,6 +89,7 @@ variable "postgres_pass" {
   description = "Password for postgres"
   type        = string
   sensitive   = true
+  default     = "default-password"
 }
 
 variable "redis_url" {
