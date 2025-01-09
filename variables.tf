@@ -81,7 +81,7 @@ variable "database_url" {
 
 variable "enable_postgres" {
   description = "Enable postgresql"
-  type        = boolean
+  type        = bool
   default     = "false"
   sensitive   = true
 }
