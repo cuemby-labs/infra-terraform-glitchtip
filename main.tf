@@ -46,7 +46,7 @@ resource "helm_release" "glitchtip" {
 resource "kubernetes_ingress" "glitchtip" {
   metadata {
     name        = "glitchtip-web"
-    namespace   = var.namespace
+    namespace   = var.namespace_name
     annotations = {
       "cert-manager.io/issuer"                              = var.issuer_name
       "cert-manager.io/issuer-kind"                         = var.issuer_kind
