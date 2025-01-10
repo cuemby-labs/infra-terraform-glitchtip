@@ -73,16 +73,10 @@ resource "kubernetes_ingress" "glitchtip" {
 
       http {
         path {
-          path      = "/"
-          path_type = "Prefix"
-
+          path = "/"
           backend {
-            service {
-              name = "glitchtip-web"
-              port {
-                number = 80
-              }
-            }
+            service_name = "glitchtip-web"
+            service_port = 80
           }
         }
       }
