@@ -13,7 +13,7 @@ web:
       - host: glitchtip.${domain_name}
         paths:
           - path: /
-            pathType: Prefix
+            pathType: ImplementationSpecific
     tls:
       - secretName: glitchtip-${dash_domain_name}
         hosts:
