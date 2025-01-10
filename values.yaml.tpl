@@ -1,37 +1,4 @@
 web:
-  ingress:
-    enabled: true
-    className: nginx
-    spec:
-      rules:
-      - host: glitchtip.${domain_name}
-        http:
-          paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: glitchtip-web
-                port:
-                  number: 80
-    annotations:
-      ingress.kubernetes.io/proxy-body-size: "0"
-      ingress.kubernetes.io/ssl-redirect: "true"
-      nginx.ingress.kubernetes.io/proxy-body-size: "0"
-      nginx.ingress.kubernetes.io/ssl-redirect: "true"
-      cert-manager.io/issuer: ${issuer_name}
-      cert-manager.io/issuer-kind: ${issuer_kind}
-      cert-manager.io/issuer-group: cert-manager.k8s.cloudflare.com
-      external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
-    hosts:
-      - host: glitchtip.${domain_name}
-        paths:
-          - path: /
-            pathType: Prefix
-    tls:
-      - secretName: glitchtip-${dash_domain_name}
-        hosts:
-          - glitchtip.${domain_name}
   resources:
     limits:
       cpu: ${web_limits_cpu}

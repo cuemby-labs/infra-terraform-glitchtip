@@ -43,6 +43,53 @@ resource "helm_release" "glitchtip" {
   ]
 }
 
+resource "kubernetes_ingress" "glitchtip" {
+  metadata {
+    name        = "glitchtip-web"
+    namespace   = var.namespace
+    annotations = {
+      "cert-manager.io/issuer"                              = var.issuer_name
+      "cert-manager.io/issuer-kind"                         = var.issuer_kind
+      "cert-manager.io/issuer-group"                        = "cert-manager.k8s.cloudflare.com"
+      "external-dns.alpha.kubernetes.io/cloudflare-proxied" = "true"
+      "external-dns.alpha.kubernetes.io/hostname"           = "glitchtip.${var.domain_name}"
+      "ingress.kubernetes.io/proxy-body-size"               = "0"
+      "ingress.kubernetes.io/ssl-redirect"                  = "true"
+      "nginx.ingress.kubernetes.io/proxy-body-size"         = "0"
+      "nginx.ingress.kubernetes.io/ssl-redirect"            = "true"
+    }
+  }
+
+  spec {
+    ingress_class_name = "nginx"
+
+    tls {
+      hosts       = ["glitchtip.${var.domain_name}"]
+      secret_name = "glitchtip-${local.dash_domain_name}"
+    }
+
+    rule {
+      host = "glitchtip.${var.domain_name}"
+
+      http {
+        path {
+          path      = "/"
+          path_type = "Prefix"
+
+          backend {
+            service {
+              name = "glitchtip-web"
+              port {
+                number = 80
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 #
 # Walrus Information
 #
