@@ -3,17 +3,17 @@ web:
     enabled: true
     className: nginx
     annotations:
-      ingress.kubernetes.io/proxy-body-size: "0"
-      nginx.ingress.kubernetes.io/proxy-body-size: "0"
-      cert-manager.io/issuer: ${issuer_name}
-      cert-manager.io/issuer-kind: ${issuer_kind}
+      cert-manager.io/issuer: origin-ca-issuer
       cert-manager.io/issuer-group: cert-manager.k8s.cloudflare.com
+      cert-manager.io/issuer-kind: ClusterOriginIssuer
       external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
+      nginx.ingress.kubernetes.io/proxy-body-size: "0"
+      nginx.ingress.kubernetes.io/ssl-redirect: "true"
     hosts:
       - host: glitchtip.${domain_name}
         paths:
           - path: /
-            pathType: ImplementationSpecific
+            pathType: Prefix
     tls:
       - secretName: glitchtip-${dash_domain_name}
         hosts:
