@@ -148,6 +148,16 @@ components:
           x-walrus-ui:
             group: Basic
             order: 6
+        email_url:
+          title: Email Url
+          type: string
+          description: Email URL
+          default: smtp://resend:API_KEY@smtp.resend.com:465
+          format: password
+          writeOnly: true
+          x-walrus-ui:
+            group: Basic
+            order: 9
         domain_name:
           title: Domain Name
           type: string

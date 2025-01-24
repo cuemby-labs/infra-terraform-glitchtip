@@ -29,6 +29,7 @@ env:
     SECRET_KEY: ${SECRET_KEY}
     DATABASE_URL: ${DATABASE_URL}
     REDIS_URL: ${REDIS_URL}
+    EMAIL_URL: ${EMAIL_URL}
 
 postgresql:
   enabled: ${postgresql}

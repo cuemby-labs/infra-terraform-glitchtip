@@ -31,31 +31,31 @@ variable "resources" {
     web = {
       limits = {
         cpu    = "1000m"
-        memory = "512Mi"
+        memory = "1024Mi"
       }
       requests = {
-        cpu    = "100m"
-        memory = "256Mi"
+        cpu    = "500m"
+        memory = "512Mi"
       }
     }
     worker = {
       limits = {
         cpu    = "900m"
-        memory = "768Mi"
+        memory = "1024Mi"
       }
       requests = {
-        cpu    = "100m"
-        memory = "350Mi"
+        cpu    = "450m"
+        memory = "512Mi"
       }
     }
     beat = {
       limits = {
-        cpu    = "200m"
-        memory = "150Mi"
+        cpu    = "400m"
+        memory = "512Mi"
       }
       requests = {
-        cpu    = "100m"
-        memory = "130Mi"
+        cpu    = "200m"
+        memory = "256Mi"
       }
     }
   }
@@ -96,6 +96,13 @@ variable "redis_url" {
   description = "Redis connection string for GlitchTip."
   type        = string
   default     = "redis://localhost:6379"
+  sensitive   = true
+}
+
+variable "email_url" {
+  description = "Email URL"
+  type        = string
+  default     = "smtp://resend:API_KEY@smtp.resend.com:465"
   sensitive   = true
 }
 
