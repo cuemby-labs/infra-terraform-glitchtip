@@ -29,25 +29,25 @@ components:
           default:
             beat:
               limits:
-                cpu: 200m
-                memory: 150Mi
+                cpu: 400m
+                memory: 512Mi
               requests:
-                cpu: 100m
-                memory: 130Mi
+                cpu: 200m
+                memory: 256Mi
             web:
               limits:
                 cpu: 1000m
-                memory: 512Mi
+                memory: 1024Mi
               requests:
-                cpu: 100m
-                memory: 256Mi
+                cpu: 500m
+                memory: 512Mi
             worker:
               limits:
                 cpu: 900m
-                memory: 768Mi
+                memory: 1024Mi
               requests:
-                cpu: 100m
-                memory: 350Mi
+                cpu: 450m
+                memory: 512Mi
           additionalProperties:
             properties:
               limits:
@@ -147,7 +147,7 @@ components:
           writeOnly: true
           x-walrus-ui:
             group: Basic
-            order: 6
+            order: 8
         email_url:
           title: Email Url
           type: string
@@ -165,7 +165,7 @@ components:
           default: dev.domainname.com
           x-walrus-ui:
             group: Basic
-            order: 7
+            order: 10
         issuer_name:
           title: Issuer Name
           type: string
@@ -173,7 +173,7 @@ components:
           default: origin-ca-issuer
           x-walrus-ui:
             group: Basic
-            order: 8
+            order: 11
         issuer_kind:
           title: Issuer Kind
           type: string
@@ -181,7 +181,7 @@ components:
           default: ClusterOriginIssuer
           x-walrus-ui:
             group: Basic
-            order: 9
+            order: 12
       x-walrus-ui:
         groupOrder:
         - Basic
