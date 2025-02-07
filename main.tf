@@ -24,6 +24,7 @@ resource "helm_release" "glitchtip" {
       DATABASE_URL              = var.database_url,
       REDIS_URL                 = var.redis_url,
       EMAIL_URL                 = var.email_url,
+      DEFAULT_FROM_EMAIL        = var.emailfrom_url,
       web_request_memory        = var.resources["web"]["requests"]["memory"],
       web_limits_memory         = var.resources["web"]["limits"]["memory"],
       web_request_cpu           = var.resources["web"]["requests"]["cpu"],

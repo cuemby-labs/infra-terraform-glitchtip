@@ -158,6 +158,16 @@ components:
           x-walrus-ui:
             group: Basic
             order: 9
+        emailfrom_url:
+          title: Emailfrom Url
+          type: string
+          description: Email FROM URL
+          default: rd@cuemby.com
+          format: password
+          writeOnly: true
+          x-walrus-ui:
+            group: Basic
+            order: 10
         domain_name:
           title: Domain Name
           type: string
@@ -165,7 +175,7 @@ components:
           default: dev.domainname.com
           x-walrus-ui:
             group: Basic
-            order: 10
+            order: 11
         issuer_name:
           title: Issuer Name
           type: string
@@ -173,7 +183,7 @@ components:
           default: origin-ca-issuer
           x-walrus-ui:
             group: Basic
-            order: 11
+            order: 12
         issuer_kind:
           title: Issuer Kind
           type: string
@@ -181,7 +191,7 @@ components:
           default: ClusterOriginIssuer
           x-walrus-ui:
             group: Basic
-            order: 12
+            order: 13
       x-walrus-ui:
         groupOrder:
         - Basic

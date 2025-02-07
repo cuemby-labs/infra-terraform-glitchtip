@@ -106,6 +106,13 @@ variable "email_url" {
   sensitive   = true
 }
 
+variable "emailfrom_url" {
+  description = "Email FROM URL"
+  type        = string
+  default     = "rd@cuemby.com"
+  sensitive   = true
+}
+
 variable "domain_name" {
   type        = string
   description = "domain name for GlitchTip, e.g. 'dev.domainname.com'"
