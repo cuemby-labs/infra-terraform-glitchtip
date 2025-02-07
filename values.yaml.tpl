@@ -30,7 +30,7 @@ env:
     DATABASE_URL: ${DATABASE_URL}
     REDIS_URL: ${REDIS_URL}
     EMAIL_URL: ${EMAIL_URL}
-    DEFAULT_FROM_EMAIL: ${EMAILFROM_URL}
+    DEFAULT_FROM_EMAIL: ${DEFAULT_FROM_EMAIL}
 
 postgresql:
   enabled: ${postgresql}
