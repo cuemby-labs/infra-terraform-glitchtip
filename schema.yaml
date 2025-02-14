@@ -5,6 +5,11 @@ components:
   schemas:
     variables:
       type: object
+      required:
+      - aws_access_key_id
+      - aws_s3_endpoint_url
+      - aws_secret_access_key
+      - aws_storage_bucket_name
       properties:
         namespace_name:
           title: Namespace Name
@@ -192,6 +197,48 @@ components:
           x-walrus-ui:
             group: Basic
             order: 13
+        default_file_storage:
+          title: Default File Storage
+          type: string
+          description: Default File Storage
+          default: storages.backends.s3boto3.S3Boto3Storage
+          format: password
+          writeOnly: true
+          x-walrus-ui:
+            group: Basic
+            order: 14
+        aws_access_key_id:
+          title: Aws Access Key Id
+          type: string
+          description: MinIO Access Key
+          format: password
+          writeOnly: true
+          x-walrus-ui:
+            group: Basic
+            order: 15
+        aws_secret_access_key:
+          title: Aws Secret Access Key
+          type: string
+          description: MinIO Secret Key
+          format: password
+          writeOnly: true
+          x-walrus-ui:
+            group: Basic
+            order: 16
+        aws_storage_bucket_name:
+          title: Aws Storage Bucket Name
+          type: string
+          description: MinIO Bucket Name
+          x-walrus-ui:
+            group: Basic
+            order: 17
+        aws_s3_endpoint_url:
+          title: Aws S3 Endpoint Url
+          type: string
+          description: MinIO S3 Endpoint
+          x-walrus-ui:
+            group: Basic
+            order: 18
       x-walrus-ui:
         groupOrder:
         - Basic
