@@ -131,6 +131,36 @@ variable "issuer_kind" {
   default     = "ClusterOriginIssuer"
 }
 
+# MinIO Configuration
+variable "default_file_storage" {
+  description = "Default File Storage"
+  type        = string
+  default     = "storages.backends.s3boto3.S3Boto3Storage"
+  sensitive   = true
+}
+
+variable "aws_access_key_id" {
+  description = "MinIO Access Key"
+  type        = string
+  sensitive   = true
+}
+
+variable "aws_secret_access_key" {
+  description = "MinIO Secret Key"
+  type        = string
+  sensitive   = true
+}
+
+variable "aws_storage_bucket_name" {
+  description = "MinIO Bucket Name"
+  type        = string
+}
+
+variable "aws_s3_endpoint_url" {
+  description = "MinIO S3 Endpoint"
+  type        = string
+}
+
 #
 # Walrus Contextual Fields
 #
