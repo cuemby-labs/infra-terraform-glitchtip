@@ -142,22 +142,26 @@ variable "default_file_storage" {
 variable "aws_access_key_id" {
   description = "MinIO Access Key"
   type        = string
+  default     = ""
   sensitive   = true
 }
 
 variable "aws_secret_access_key" {
   description = "MinIO Secret Key"
   type        = string
+  default     = ""
   sensitive   = true
 }
 
 variable "aws_storage_bucket_name" {
   description = "MinIO Bucket Name"
+  default     = ""
   type        = string
 }
 
 variable "aws_s3_endpoint_url" {
   description = "MinIO S3 Endpoint"
+  default     = ""
   type        = string
 }
 
