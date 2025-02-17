@@ -132,13 +132,6 @@ variable "issuer_kind" {
 }
 
 # MinIO Configuration
-variable "default_file_storage" {
-  description = "Default File Storage"
-  type        = string
-  default     = "storages.backends.s3boto3.S3Boto3Storage"
-  sensitive   = true
-}
-
 variable "aws_access_key_id" {
   description = "MinIO Access Key"
   type        = string
