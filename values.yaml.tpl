@@ -31,7 +31,6 @@ env:
     REDIS_URL: ${REDIS_URL}
     EMAIL_URL: ${EMAIL_URL}
     DEFAULT_FROM_EMAIL: ${DEFAULT_FROM_EMAIL}
-    
     # MinIO Configuration for File Storage
     DEFAULT_FILE_STORAGE: "storages.backends.s3boto3.S3Boto3Storage"
     AWS_ACCESS_KEY_ID: {AWS_ACCESS_KEY_ID}
